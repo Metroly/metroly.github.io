@@ -81,8 +81,8 @@ define(['jquery', 'storage', 'underscore', 'backbone', 'config', 'busData'], fun
     //   console.log('Needs an update');
     //   this.queryAvailableBuses(cb);
     // } else {
-    //   console.log('Up to date');
-    //   if (cb) cb();
+      console.log('Up to date');
+      if (cb) cb();
     // }
   };
 
