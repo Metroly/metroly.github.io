@@ -12,16 +12,17 @@ define(['jquery', 'storage', 'underscore', 'backbone', 'config', 'busData'], fun
   };
 
   AppState.prototype.needsUpdate = function () {
-    var appInfo = Storage.get('appInfo'),
-      lastUpdated,
-      expiration = new Date();
-
-    if (appInfo.data[config.LAST_UPDATED_SETTING]) {
-     lastUpdated = new Date(appInfo.data[config.LAST_UPDATED_SETTING]);
-     expiration.setDate(lastUpdated.getDate() + config.CHECK_UPDATES_DAYS);
-    }
-
-    return !lastUpdated || lastUpdated >= expiration;
+    return true;
+    // var appInfo = Storage.get('appInfo'),
+    //   lastUpdated,
+    //   expiration = new Date();
+    //
+    // if (appInfo.data[config.LAST_UPDATED_SETTING]) {
+    //  lastUpdated = new Date(appInfo.data[config.LAST_UPDATED_SETTING]);
+    //  expiration.setDate(lastUpdated.getDate() + config.CHECK_UPDATES_DAYS);
+    // }
+    //
+    // return !lastUpdated || lastUpdated >= expiration;
   };
 
   AppState.prototype.saveBusList = function (buses, cb) {
