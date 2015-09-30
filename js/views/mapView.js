@@ -45,8 +45,6 @@ define([
   var defaultLocation = locations.brooklyn;
   var defaultZoomLevel = 13;
 
-  var tilesUrl = 'http://{s}.tile.cloudmade.com/23b30a5239c3475d9babd947f2b7a12b/22677/256/{z}/{x}/{y}.png';
-
   var LocatorIcon = L.Icon.extend({
     options: {
       iconUrl: 'assets/images/icon_set/locator_icon.svg',
@@ -82,10 +80,10 @@ define([
     sw: new LocatorIcon({iconUrl: imagesBasePath + 'icon_sw.svg'}),
   };
 
-  var cloudmadeTiles = new L.TileLayer(tilesUrl, {
-    maxZoom: 16,
-    minZoom: 13
-  });
+  // var cloudmadeTiles = new L.TileLayer(tilesUrl, {
+  //   maxZoom: 16,
+  //   minZoom: 13
+  // });
 
   var maxBounds = new L.LatLngBounds(locations.SWBound, locations.NEBound);
 
@@ -190,10 +188,13 @@ define([
 
     initMap: function () {
       this.ensureMapHeight();
-      this.map = L.map(this.el);
+      // Provide your access token
+      L.mapbox.accessToken = 'pk.eyJ1IjoibWV0cm9seWFwcCIsImEiOiJpUll6dVlvIn0.P6-IEczcYJ9CQFe4IVWLWQ';
+      // // Create a map in the div #map
+      this.map = L.mapbox.map(this.el, 'metrolyapp.nj0fchnh');
       this.map.setView(defaultLocation, defaultZoomLevel);
       this.ensureMapHeight();
-      cloudmadeTiles.addTo(this.map);
+      // cloudmadeTiles.addTo(this.map);
       this.map.setMaxBounds(maxBounds);
 
       this.map.on('viewreset', _.bind(this.determineLayerVisibility, this));
@@ -205,7 +206,12 @@ define([
         minZoom = this.map.getMinZoom(),
         halfZoom = Math.ceil((maxZoom - minZoom) / 2) + minZoom;
 
-      if (zoomLevel < halfZoom) {
+      // console.log('minZoom is ', minZoom);
+      // console.log('maxZoom is ', maxZoom);
+      // console.info('The zoomLevel is ', zoomLevel);
+      // console.info('The halfZoom is ', halfZoom);
+
+      if (zoomLevel > halfZoom) {
         this.map.removeLayer(CurrentStopsLayer);
       } else {
         this.map.addLayer(CurrentStopsLayer);
@@ -225,37 +231,7 @@ define([
 
       this.map.on("locationfound", function(locData) {
 
-        // var currentMapZoom = self.map.getZoom(),
-        //     currentMapBounds = self.map.getBounds();
-
-
-        //IF Not Useful, just comment out Else Block
-        // and leave If condition's code
-        // if (currentMapBounds.contains(locData.latlng)) {
-
-          panToAndRestoreSpinner(locData.latlng);
-
-        // } else {
-
-        //   self.map.on("zoomend", function zoomOnLcationFound (e) {
-
-        //     self.map.off("zoomend", zoomOnLcationFound);
-
-        //     setTimeout(function () {
-
-        //       panToAndRestoreSpinner(locData.latlng, function () {
-
-        //         self.map.setZoom(currentMapZoom, {
-        //           animate: true
-        //         });
-        //       });
-
-        //     }, 800);
-
-        //   });
-
-        //   self.map.setZoom(11, {animate: true});
-        // }
+        panToAndRestoreSpinner(locData.latlng);
 
         function panToAndRestoreSpinner(LatLng, callback) {
 
@@ -467,7 +443,7 @@ define([
       });
 
       self.map.removeLayer(CurrentStopsLayer);
-      
+
       if (direction === 0) {
         CurrentStopsLayer = StopsLayers.dir0; // default.
       } else {
