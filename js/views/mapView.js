@@ -191,7 +191,7 @@ define([
       // Provide your access token
       L.mapbox.accessToken = 'pk.eyJ1IjoibWV0cm9seWFwcCIsImEiOiJpUll6dVlvIn0.P6-IEczcYJ9CQFe4IVWLWQ';
       // // Create a map in the div #map
-      this.map = L.mapbox.map(this.el, 'metrolyapp.nj0fchnh');
+      this.map = L.mapbox.map(this.el, 'metrolyapp.77b2a747');
       this.map.setView(defaultLocation, defaultZoomLevel);
       this.ensureMapHeight();
       // cloudmadeTiles.addTo(this.map);
