@@ -487,6 +487,10 @@
   "name": "Bx30",
   "color": "#EE352E"
 }, {
+  "id": "MTA NYCT_B49",
+  "name": "B49",
+  "color": "#EE352E"
+}, {
   "id": "MTA NYCT_B63",
   "name": "B63",
   "color": "#006CB7"
