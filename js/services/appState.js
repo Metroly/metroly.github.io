@@ -77,13 +77,13 @@ define(['jquery', 'storage', 'underscore', 'backbone', 'config', 'busData'], fun
       this.saveBusList(initialBusData);
     }
 
-    if (this.needsUpdate()) {
-      console.log('Needs an update');
-      this.queryAvailableBuses(cb);
-    } else {
-      console.log('Up to date');
-      if (cb) cb();
-    }
+    // if (this.needsUpdate()) {
+    //   console.log('Needs an update');
+    //   this.queryAvailableBuses(cb);
+    // } else {
+    //   console.log('Up to date');
+    //   if (cb) cb();
+    // }
   };
 
   AppState.prototype.getSettings = function () {
