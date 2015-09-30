@@ -204,14 +204,9 @@ define([
       var zoomLevel = this.map.getZoom(),
         maxZoom = this.map.getMaxZoom(),
         minZoom = this.map.getMinZoom(),
-        halfZoom = Math.ceil((maxZoom - minZoom) / 2) + minZoom;
+        halfZoom = 16;
 
-      // console.log('minZoom is ', minZoom);
-      // console.log('maxZoom is ', maxZoom);
-      // console.info('The zoomLevel is ', zoomLevel);
-      // console.info('The halfZoom is ', halfZoom);
-
-      if (zoomLevel > halfZoom) {
+      if (zoomLevel < halfZoom) {
         this.map.removeLayer(CurrentStopsLayer);
       } else {
         this.map.addLayer(CurrentStopsLayer);
