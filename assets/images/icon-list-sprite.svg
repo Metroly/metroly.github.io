@@ -20,12 +20,14 @@
 		c-0.068,0.162-0.101,0.33-0.101,0.5l0,0C0.592,48.693,0.592,48.693,0.592,48.698z"/>
 </g>
 <g>
-	<rect x="11.625" y="6.062" fill="#FFFFFF" width="14.395" height="2.497"/>
-	<rect x="11.687" y="12.438" fill="#FFFFFF" width="14.395" height="2.494"/>
-	<rect x="11.625" y="18.938" fill="#FFFFFF" width="14.395" height="2.494"/>
-	<rect x="6.062" y="6.062" fill="#FFFFFF" width="2.665" height="2.497"/>
-	<rect x="6.125" y="12.438" fill="#FFFFFF" width="2.665" height="2.494"/>
-	<rect x="6.062" y="18.938" fill="#FFFFFF" width="2.665" height="2.494"/>
+	<rect x="11.625" y="5.092" fill="#FFFFFF" width="14.395" height="2.497"/>
+	<rect x="11.625" y="10.083" fill="#FFFFFF" width="14.395" height="2.494"/>
+	<rect x="11.625" y="15.071" fill="#FFFFFF" width="14.395" height="2.494"/>
+	<rect x="11.625" y="20.061" fill="#FFFFFF" width="14.395" height="2.494"/>
+	<rect x="6.062" y="5.092" fill="#FFFFFF" width="2.665" height="2.497"/>
+	<rect x="6.062" y="10.083" fill="#FFFFFF" width="2.665" height="2.494"/>
+	<rect x="6.062" y="15.071" fill="#FFFFFF" width="2.665" height="2.494"/>
+	<rect x="6.062" y="20.061" fill="#FFFFFF" width="2.665" height="2.494"/>
 	<path fill="#FFFFFF" d="M1.074,0.104v27.439H11.48l4.562,4.561l4.558-4.561h10.407V0.104H1.074z M28.516,25.05h-5.418h-2.744
 		l-4.312,4.087L11.98,25.05H8.983H3.569V2.598h24.947V25.05L28.516,25.05z"/>
 </g>
